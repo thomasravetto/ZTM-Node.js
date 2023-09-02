@@ -1,8 +1,8 @@
-const { request } = require('https');
+const { get } = require('https');
 
 
 // Making an https request
-const https_req = request('https://www.google.com', (res) => {
+get('https://www.google.com', (res) => {
     res.on('data', (chunk) => {
         console.log(`Data chunk https: ${chunk}`)
     })
@@ -10,5 +10,3 @@ const https_req = request('https://www.google.com', (res) => {
         console.log('No more data')
     })
 })
-
-https_req.end()

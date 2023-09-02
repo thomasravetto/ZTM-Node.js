@@ -5,6 +5,8 @@ const raceDriver = new EventEmitter()
 raceDriver.on('race', (result) => {
     if (result === "won") {
         console.log("Congratulations!!")
+    } else if (result === 'lost') {
+        console.log("Noooo")
     }
 })
 
@@ -12,7 +14,10 @@ raceDriver.on('race', (result) => {
 raceDriver.on('race', (result) => {
     if (result === "won") {
         console.log("I could have done better than that!!")
+    } else if (result === "lost") {
+        console.log("Yess, now I can win!")
     }
 })
 
 raceDriver.emit("race", "won")
+raceDriver.emit("race", "lost")
